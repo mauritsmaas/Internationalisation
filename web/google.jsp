@@ -42,8 +42,9 @@
 
     function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 4,
+            zoom: 2.3,
             center: {lat: 45.2740544, lng: 9.5655919},
+            mapTypeId:google.maps.MapTypeId.ROADMAP,
             styles: [
                 {
                     "featureType": "administrative.neighborhood",
@@ -133,6 +134,7 @@
         ];
 
         var infowindow = new google.maps.InfoWindow();
+        var markers = [];
         var service = new google.maps.places.PlacesService(map);
         //foreach om alle universiteiten op de map te plaatsen
         for (var i = 0; i < universities.length; i++) {
@@ -146,6 +148,7 @@
                         position: place.geometry.location,
                         url: place.url
                     });
+                    markers.push(marker) //Store the markers in an array
                     google.maps.event.addListener(marker, 'click', function() {
                         infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
                             'Place ID: ' + place.place_id + '<br>' +
@@ -160,6 +163,12 @@
                         //window.open(marker.url);  <- open de officiele site van uni
                     });
                 }
+                var i = 0;
+                setInterval(function () {
+                    if (i == markers.length) i = 0;
+                    google.maps.event.trigger(markers[i], 'click'); // Trigger click on marker after 4s
+                    i++;
+                }, 2000);
             });
         }
     }
