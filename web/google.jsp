@@ -167,8 +167,13 @@
                 setInterval(function () {
                     if (i == markers.length) i = 0;
                     google.maps.event.trigger(markers[i], 'click'); // Trigger click on marker after 4s
+                    map.setZoom(2.3);
+                    map.panTo(markers[i].position);
                     i++;
-                }, 2000);
+                    setTimeout(function() {
+                        map.setZoom(8);
+                    }, 2000);
+                }, 5000);
             });
         }
     }
