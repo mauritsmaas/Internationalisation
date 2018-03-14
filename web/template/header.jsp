@@ -36,20 +36,23 @@
 
     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
         <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Universities <span class="sr-only">(current)</span></a>
+            <li class="nav-item">
+                <a class="nav-link" href="index.jsp">Map</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Blog</a>
+                <a class="nav-link" href="universities.jsp">Universities</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
+                <a class="nav-link" href="blog.jsp">Blog</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
+                <a class="nav-link" href="about.jsp">About</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Sign in</a>
+                <a class="nav-link" href="contact.jsp">Contact</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="signin.jsp">Sign in</a>
             </li>
             <li class="nav-item">
                 <button class="btn" onclick="logout()">Logout</button>
